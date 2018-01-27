@@ -8,14 +8,12 @@ class PostsNew extends Component {
       <div className="form-group">
         <label>{field.label}</label>
         <input className="form-control" type="text" {...field.input} />
-        {field.meta.error}
+        {field.meta.touched ? field.meta.error : ''}
       </div>
     );
   }
 
-  onSubmit(values) {
-
-  }
+  onSubmit(values) {}
 
   render() {
     const { handleSubmit } = this.props;
@@ -43,7 +41,9 @@ class PostsNew extends Component {
             component={this.renderField}
             label="Post Content"
           />
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary">
+            Submit
+          </button>
         </form>
       </div>
     );

@@ -8,11 +8,18 @@ class PostsNew extends Component {
       <div className="form-group">
         <label>{field.label}</label>
         <input className="form-control" type="text" {...field.input} />
+        {field.meta.error}
       </div>
     );
   }
 
+  onSubmit(values) {
+
+  }
+
   render() {
+    const { handleSubmit } = this.props;
+
     return (
       <div>
         <div className="text-xs-right">
@@ -20,7 +27,7 @@ class PostsNew extends Component {
             Go Back to Posts
           </Link>
         </div>
-        <form>
+        <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <Field
             name="title"
             component={this.renderField}
@@ -36,6 +43,7 @@ class PostsNew extends Component {
             component={this.renderField}
             label="Post Content"
           />
+          <button type="submit" className="btn btn-primary">Submit</button>
         </form>
       </div>
     );

@@ -25,11 +25,6 @@ class PostsNew extends Component {
 
     return (
       <div>
-        <div className="text-xs-right">
-          <Link className="btn btn-primary" to="/">
-            Go Back to Posts
-          </Link>
-        </div>
         <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
           <Field
             name="title"
@@ -49,6 +44,9 @@ class PostsNew extends Component {
           <button type="submit" className="btn btn-primary">
             Submit
           </button>
+          <Link className="btn btn-danger" to="/">
+            Cancel
+          </Link>
         </form>
       </div>
     );

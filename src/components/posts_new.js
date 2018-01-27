@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { Field, reduxForm } from "redux-form";
 
 class PostsNew extends Component {
-  renderTitleField(field) {
+  renderField(field) {
     return (
-      <div>
-        <input type="text" {...field.input} />
+      <div className="form-group">
+        <label>{field.label}</label>
+        <input className="form-control" type="text" {...field.input} />
       </div>
     );
   }
@@ -20,7 +21,9 @@ class PostsNew extends Component {
           </Link>
         </div>
         <form>
-          <Field name="title" component={this.renderTitleField} />
+          <Field name="title" component={this.renderField} label="Title For Post" />
+          <Field name="tags" component={this.renderField} label="Tags" />
+          <Field name="content" component={this.renderField} label="Post Content" />
         </form>
       </div>
     );

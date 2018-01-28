@@ -1,7 +1,11 @@
 body {
-    padding-top: 15px;
+  padding-top: 15px;
 }
 
 form a {
-    margin-left: 5px;
+  margin-left: 5px;
+}
+
+#title {
+  padding-top: 10px;
 }

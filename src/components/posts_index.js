@@ -14,9 +14,7 @@ class PostsIndex extends Component {
       return (
         <li className="list-group-item" key={post.id}>
           <h4>
-            <Link to={`/posts/${post.id}`}>
-              {post.title}
-            </Link>
+            <Link to={`/posts/${post.id}`}>{post.title}</Link>
           </h4>
           Tags: {post.categories}
           <p>{post.content}</p>
@@ -27,7 +25,7 @@ class PostsIndex extends Component {
 
   render() {
     return (
-      <div>
+      <div className="col-xs-10 col-xs-offset-1">
         <div className="text-xs-right">
           <Link className="btn btn-primary" to="/posts/new">
             Add a Post
